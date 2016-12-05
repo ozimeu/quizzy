@@ -1,0 +1,11 @@
+.row.text-center.main
+  .col-lg-4.col-lg-offset-4.text-center
+    %p
+      Quiz name:
+      = quiz.name
+    %p Questions:
+    - questions.each do |question|
+      %p
+        = question.body
+        - Answer.where(question_id: question.id).each do |answer|
+          %p= answer.body + " (" + answer.correct.to_s + ")"

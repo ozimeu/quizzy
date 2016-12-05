@@ -1,0 +1,6 @@
+.row.text-center.main
+  .col-lg-4.col-lg-offset-4.text-center
+    = react_component "Quiz", quiz_id: Quiz.last.id + 1
+    = react_component "Question", quiz_id: Quiz.last.id + 1
+    = react_component "Answers", question_id: Question.last.id + 1
+      
