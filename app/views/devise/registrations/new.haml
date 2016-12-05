@@ -1,0 +1,31 @@
+%section
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2 Sign up
+        %hr.star-primary/
+    .row
+      .col-lg-8.col-lg-offset-2
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Email
+              = f.email_field :email, {"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Email", :required => "", :type => "email"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Password
+              = f.password_field :password, {"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Password", :required => "", :type => "password"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Password confirmation
+              = f.password_field :password, {"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Password confirmation", :required => "", :type => "password"}
+              %p.help-block.text-danger
+          #success
+          .row
+            .form-group.col-xs-12
+              %button.btn.btn-success.btn-lg= f.submit "Sign up"
+  
+    = render "devise/shared/links"
